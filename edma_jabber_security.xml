@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data noupdate="0">
+    <record id="group_edma_jabber_manager" model="res.groups">
+      <field name="name">EDMA Jabber Manager</field>
+    </record>
+    <record model="ir.ui.menu" id="menu_xmpp">
+      <field name="groups_id" eval="[(6,0,[ref('group_edma_jabber_manager')])]"/>
+    </record>
+  </data>
+</openerp>
+
