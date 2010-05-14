@@ -43,6 +43,7 @@
       <field name="view_type">tree</field>
       <field name="view_id" ref="view_edma_jabber_tree"/>
     </record> 
+
     <record model="ir.actions.act_window" id="action_edma_jabber_form">
       <field name="name">Compte XMPP</field>
       <field name="type">ir.actions.act_window</field>
@@ -53,5 +54,6 @@
 
     <menuitem name="XMPP" id="menu_xmpp"/>
     <menuitem name="XMPP/Comptes" id="menu_xmpp_comptes" action="action_edma_jabber_tree"/>
+    <menuitem name="XMPP/Crear nou compte" id="menu_xmpp_nou_compte" action="action_edma_jabber_form"/>
   </data>
 </openerp>
