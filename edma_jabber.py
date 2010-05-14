@@ -1,8 +1,7 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    giscemisc_jabber.py - (c) 2009 Marcos De Vera Piquero <mdevera@gisce.net>
-#                          (c) 2009 GISCE Enginyeria, SL
+#    edma_jabber.py - (c) 2009 Marcos De Vera Piquero <marc0s@fsfe.org>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -29,7 +28,7 @@ import tools
 from jabberbot import JabberBot
 import datetime
 
-class GisceBotSessions():
+class EDMABotSessions():
     """Here we store the authenticated sessions with the Bot.
     The _sessions dict will have as keys the jids of the authenticated users.
     The content of each position of the dict will be another dict with the
@@ -54,10 +53,10 @@ class GisceBotSessions():
     def get_session(self, jid):
         return self._sessions[jid]
 
-class GisceBot(JabberBot):
+class EDMABot(JabberBot):
     logger = netsvc.Logger()
     _logged_in = False
-    _sessions = GisceBotSessions()
+    _sessions = EDMABotSessions()
     _commonService = netsvc.LocalService('common')
     _objectService = netsvc.LocalService('object')
 
@@ -207,9 +206,9 @@ class GisceBot(JabberBot):
         self.elog("Unknown command requested: %s" % (cmd,))
         return "Command not found."
 
-class giscemisc_jabberbot(osv.osv):
-    _name = "giscemisc.jabberbot"
-    _description = "GISCEMisc JabberBot"
+class edma_jabber(osv.osv):
+    _name = "edma.jabber"
+    _description = "EDMA Jabber"
     _columns = {
         'name': fields.char('JID',size=255),
         'password': fields.char('Password',size=255),
@@ -224,7 +223,7 @@ class giscemisc_jabberbot(osv.osv):
       'secure': lambda *a: False,
     }
     
-giscemisc_jabberbot()
+edma_jabber()
 
 class JabberBot(Thread):
     def __init__(self):
@@ -239,12 +238,12 @@ class JabberBot(Thread):
         # dirty hack while we discover the problem here ...
         import time
         time.sleep(1)
-        gjobj = pool.get('giscemisc.jabberbot')
+        gjobj = pool.get('edma.jabber')
         # TODO stop using a hardcoded uid. 
         ids = gjobj.search(cr, 1, [])
         if len(ids):
             gj = gjobj.browse(cr, 1, ids[0])
-            bot = GisceBot(gj.name, gj.password, res=gj.resource, server=gj.server, port=gj.port, secure=gj.secure)
+            bot = EDMABot(gj.name, gj.password, res=gj.resource, server=gj.server, port=gj.port, secure=gj.secure)
             bot.set_db(tools.config['db_name'])
             bot.set_startuptime(self.startup)
             bot.serve_forever()

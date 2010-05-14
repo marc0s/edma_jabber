@@ -38,14 +38,14 @@
     <record model="ir.actions.act_window" id="action_edma_jabber_tree">
       <field name="name">Comptes XMPP</field>
       <field name="type">ir.actions.act_window</field>
-      <field name="res_model">edma.jabberbot</field>
+      <field name="res_model">edma.jabber</field>
       <field name="view_type">form</field>
       <field name="view_id" ref="view_edma_jabber_tree"/>
     </record>
     <record model="ir.actions.act_window" id="action_edma_jabber_form">
       <field name="name">Compte XMPP</field>
       <field name="type">ir.actions.act_window</field>
-      <field name="res_model">edma.jabberbot</field>
+      <field name="res_model">edma.jabber</field>
       <field name="view_type">form</field>
       <field name="view_id" ref="view_edma_jabber_form"/>
     </record>

@@ -19,7 +19,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 # Homepage: http://thpinfo.com/2007/python-jabberbot/
-# Homepage: http://code.aticsegona.net/repo/giscemisc_jabberbot
+# Homepage: http://github.com/marc0s/edma_jabber
 
 
 import sys
