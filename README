@@ -1,0 +1,7 @@
+README
+======
+
+This is an OpenERP module that allows the server to connect as a client
+to an XMPP server. The buddies who have the server as a contact, can
+send commands to it through chat sessions.
+
