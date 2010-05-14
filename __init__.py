@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-import giscemisc_jabber
+import edma_jabber
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 
