@@ -8,7 +8,7 @@
     'website': 'http://github.com/marc0s',
     'depends': ['base'],
     'init_xml': [],
-    'update_xml': ['edma_jabber_view.xml'],
+    'update_xml': ['edma_jabber_view.xml','edma_jabber_security.xml'],
     'demo_xml': [],
     'installable': True,
     'active': False,
